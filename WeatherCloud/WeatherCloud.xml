@@ -5,11 +5,18 @@
     <RevisionHistory>
       <Revision id="1.0">Initial version</Revision>
     </RevisionHistory>
+    <ImportParameters>
+        <Parameter>
+            <Name>Device ID</Name>
+            <Value>xxxxxxx</Value>
+            <Id>deviceID</Id>
+        </Parameter>
+    </ImportParameters>   
     <Name>WeatherCloud</Name>
     <CcuModel>PacketParserCCU</CcuModel>
     <Producer></Producer>
     <Model></Model>
-    <Description></Description>
+    <Description>documentation https://github.com/maxime-mrl/weathercloud-js/blob/main/api-documentation.md#api-documentation</Description>
     <Module>
       <Name>WeatherCloud</Name>
       <Id>-1</Id>
@@ -27,7 +34,7 @@ IF response.IsSuccess
     responseJson := content;
     END</ReadScriptPacketParser>
         <InternalPollInterval>5000</InternalPollInterval>
-        <CustomVariables>[{"Name":"responseJson","ValueTypeId":2,"NumericValue":0,"StringValue":""},{"Name":"code","ValueTypeId":2,"NumericValue":0,"StringValue":"---add-deviceID---"}]</CustomVariables>
+        <CustomVariables>[{"Name":"responseJson","ValueTypeId":2,"NumericValue":0,"StringValue":""},{"Name":"code","ValueTypeId":2,"NumericValue":0,"StringValue":"$[deviceID]"}]</CustomVariables>
         <IpAddress>app.weathercloud.net</IpAddress>
         <Port>443</Port>
         <UseHttps>True</UseHttps>
